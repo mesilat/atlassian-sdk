@@ -24,6 +24,8 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" >>/etc/apt/sources.lis
     && apt-get -y install yarn \
     && yarn --version
 
+COPY settings.xml /usr/share/atlassian-plugin-sdk-8.0.16/apache-maven-3.5.4/conf/
+
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 CMD ["atlas-version"]
